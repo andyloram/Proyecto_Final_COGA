@@ -12,11 +12,18 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 unsigned int  cargaTextura(const char* path);
 // camera
+const unsigned int SCR_WIDTH = 1000;
+const unsigned int SCR_HEIGHT = 1000;
+int Gwidth = SCR_WIDTH;
+int Gheight = SCR_HEIGHT;
+
 Camara camara(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
@@ -27,10 +34,7 @@ float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
 
 
-const unsigned int SCR_WIDTH = 1000;
-const unsigned int SCR_HEIGHT = 1000;
-int Gwidth = SCR_WIDTH;
-int Gheight = SCR_HEIGHT;
+
 
 enum partesGrua { BASEPRINCIPAL, BASEA1, BASE1, BASEA2, BASE2, PIRAD };
 
@@ -163,6 +167,15 @@ int main()
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
+		// pass projection matrix to shader (note that in this case it could change every frame)
+		glm::mat4 projection = glm::perspective(glm::radians(camara.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+		ourShader.setMat4("projection", projection);
+
+		// camera/view transformation
+		glm::mat4 view = camara.getViewMat();
+		ourShader.setMat4("view", view);
+
+
 		glBindVertexArray(VAO);
 		for (unsigned int i = 0; i < 10; i++)
 		{
@@ -203,13 +216,13 @@ void processInput(GLFWwindow* window)
 		glfwSetWindowShouldClose(window, true);
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		camara.ProcessKeyboard(DELANTE, deltaTime);
+		camara.ProcesarTeclado(DELANTE, deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		camara.ProcessKeyboard(ATRAS, deltaTime);
+		camara.ProcesarTeclado(ATRAS, deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		camara.ProcessKeyboard(IZQUIERDA, deltaTime);
+		camara.ProcesarTeclado(IZQUIERDA, deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		camara.ProcessKeyboard(DERECHA, deltaTime);
+		camara.ProcesarTeclado(DERECHA, deltaTime);
 }
 
 
@@ -237,14 +250,14 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 	lastX = xpos;
 	lastY = ypos;
 
-	camara.ProcessMouseMovement(xoffset, yoffset);
+	camara.ProcesarRaton(xoffset, yoffset);
 }
 
 // glfw: whenever the mouse scroll wheel scrolls, this callback is called
 // ----------------------------------------------------------------------
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
-	camara.ProcessMouseScroll(yoffset);
+	camara.procesarScroll(yoffset);
 }
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {

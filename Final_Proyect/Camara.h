@@ -55,7 +55,7 @@ public:
 		if (direccion == IZQUIERDA)
 			Posicion -= Derecha * velocidad;
 	}
-	void PocesarRaton(float xoffset, float yoffset, bool restriccionPitch = true)
+	void ProcesarRaton(float xoffset, float yoffset, bool restriccionPitch = true)
 	{
 		xoffset *= SensibilidadRaton;
 		yoffset *= SensibilidadRaton;
