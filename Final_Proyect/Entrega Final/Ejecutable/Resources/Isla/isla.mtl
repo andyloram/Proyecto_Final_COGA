@@ -1,0 +1,28 @@
+# Blender MTL File: 'isla.blend'
+# Material Count: 2
+
+newmtl Material.003
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump grass01_n.jpg
+map_Kd grass01.jpg
+map_Ks grass01_s.jpg
+
+newmtl Material.004
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Sand_005_normal.jpg
+map_Kd Sand_005_baseColor.jpg
+map_Ks Sand_005_roughness.jpg
