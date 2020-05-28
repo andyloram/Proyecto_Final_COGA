@@ -1,0 +1,105 @@
+# Blender MTL File: 'isla.blend'
+# Material Count: 8
+
+newmtl 01_-_Default
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump 01 - Default_Normal.png
+map_Kd 01 - Default_Base_Color.png
+map_Ks 01 - Default_Metallic.png
+
+newmtl CabinMat
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump WoodCabinNM.jpg
+map_Kd WoodCabinDif.jpg
+map_Ks WoodCabinSM.jpg
+
+newmtl Default_OBJ.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Hyophorbe_lagenicaulis_dif.jpg
+map_Ks Hyophorbe_lagenicaulis_spec.jpg
+
+newmtl Material.002
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump normal.png
+map_Kd texture.png
+map_Ks specular.png
+
+newmtl Rock
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Rock_n.jpg
+map_Kd Rock_d.jpg
+map_Ks Rock_s.jpg
+
+newmtl Wood_Driftwood
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump Wood Driftwood_Normal.png
+map_Kd Wood Driftwood_Base_Color.png
+map_Ks Wood Driftwood_Metallic.png
+
+newmtl Wood_Walnut_-_Stained_Light_No_Gloss
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.315000 0.315000 0.315000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump Wood Walnut - Stained Light No Gloss_Normal.png
+map_Kd Wood Walnut - Stained Light No Gloss_Base_Color.png
+map_Ks Wood Walnut - Stained Light No Gloss_Metallic.png
+
+newmtl fh1_01
+Ns 31.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump fh1_01_n.tga
+map_Kd fh1_01_d.tga
+map_Ks fh1_01_s.tga

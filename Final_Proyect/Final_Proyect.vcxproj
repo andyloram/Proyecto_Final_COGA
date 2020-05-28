@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -87,13 +87,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\usuario\Desktop\Andres\Proyecto_Final_COGA\glad y includes\include_lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/External Libraries\assimp\include;$(SolutionDir)/External Libraries;$(SolutionDir)/External Libraries/includeSound;$(SolutionDir)/External Libraries/glad y includes\include_lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\usuario\Desktop\Andres\Proyecto_Final_COGA\glad y includes\include_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/External Libraries/glad y includes\include_lib;$(SolutionDir)/External Libraries/includeSound;$(SolutionDir)/External Libraries;$(SolutionDir)/External Libraries/assimp/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib;assimp-vc140-mt.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;irrKlang.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -142,13 +142,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Camara.h" />
+    <ClInclude Include="Bala.h" />
+    <ClInclude Include="CoronaVirus.h" />
+    <ClInclude Include="Figuras.h" />
+    <ClInclude Include="Glifos.h" />
+    <ClInclude Include="Pistola.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Skybox.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\glad y includes\glad\glad.c" />
+    <ClCompile Include="External Libraries\glad y includes\glad\glad.c" />
+    <ClCompile Include="Figuras.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Skybox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\shader.frag" />
